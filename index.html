@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
-
 <head>
+    <link href="ResetCSS.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <script defer src="script.js"></script>
     <script defer src="progressbar.js"></script>
@@ -31,7 +32,7 @@
     </table>
 
 
-    <button id="ajoutertache" onclick="openpoptache()">+</button>
+    <button id="ajoutertache" onclick="openpoptache()">Ajouter une tâche</button>
     <progress id="progressBar"></progress>
     
     <div id="pourcentage">% de tâches accomplies</div>
@@ -44,7 +45,7 @@
         <div class="poptache-body">
             <input type="text" id= "titre" placeholder="Titre ">
             <textarea id= "description" placeholder="Description"></textarea>
-            <input type="date" id="echeance" name="echeance" value="" required/>
+            <input type="date" id="echeance" name="echeance" value="" required>
             <select name="priorite" id="priorite">
                 <option value="(3) Basse">Priorité basse</option>
                 <option value="(2) Moyenne">Priorité moyenne</option>

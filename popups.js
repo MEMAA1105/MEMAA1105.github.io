@@ -46,7 +46,13 @@ function ajouterTache(ligne){
     else{
       row = table.insertRow(table.length)
     }
-  
+    
+    // Ces replace servent de protection basique contre l'execution de code html dans les champs de la table
+    document.getElementById('titre').value = document.getElementById('titre').value.replaceAll("<", "&lt;");
+    document.getElementById('description').value = document.getElementById('description').value.replaceAll("<", "&lt;");
+    document.getElementById('titre').value = document.getElementById('titre').value.replaceAll(">", "&gt;");
+    document.getElementById('description').value = document.getElementById('description').value.replaceAll(">", "&gt;");
+    
     row.innerHTML = `<td>${document.getElementById('titre').value}</td><td>${document.getElementById('description').value}</td><td>${document.getElementById('echeance').value}</td><td>${document.getElementById('priorite').value}</td><td>${document.getElementById('statut').value}</td>`;
     
     if(alreadysearched && oldline != undefined){

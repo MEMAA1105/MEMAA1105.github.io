@@ -123,10 +123,10 @@ ul{
   transition: 200ms ease-in-out;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   background-color: rgba(0, 0, 0, .5);
   pointer-events: none;
+  width: 100vw;
+  height: 100vh;
 }
   
 #overlay.actif {
@@ -136,8 +136,9 @@ ul{
 
 #ajoutertache, #tachevalide, #tachesuppr {
   background-color:#009879;
+  border-color: #009879;
   border-radius: 10px;
-  border-style: none;
+  border-style: solid;
   color: white;
   cursor: pointer;
   font-size: 1.25rem;
@@ -157,13 +158,23 @@ ul{
   font-size: 1rem;
 }
 
-#ajoutertache:hover, #tachevalide:hover, #tachesuppr:hover {
+#ajoutertache:hover, #tachevalide:hover, #ajoutertache:focus, #tachevalide:focus{
   background-color:#007e65;
+}
+
+#tachesuppr:hover, #tachesuppr:focus {
+  background-color: red;
+  color: white;
 }
 
 #tachesuppr {
   /*transform: scale(0);*/
   display: none;
+  background-color: white;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: red;
+  color: red;
 }
 
 #tachesuppr.actif {
@@ -225,6 +236,7 @@ input[type=text], input[type=date], select, textarea{
 	border-radius: 0.5em;
   resize: none;
   min-width: 100%;
+  box-sizing: border-box;
 }
 
 #searchBar {
