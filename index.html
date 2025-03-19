@@ -15,8 +15,7 @@
     <!-- Contenu principal -->
     <h1>Gestionnaire de tâches</h1>
 
-    <input type="text" id="searchBar" placeholder="Rechercher...">
-    <p></p>
+    <input type="search" id="searchBar" placeholder="Rechercher...">
     <table class="tableTaches">
         <thead>
             <tr>
@@ -31,12 +30,10 @@
         <tbody id="tableTaches"></tbody>
     </table>
 
-    <p></p>
 
     <button id="ajoutertache" onclick="openpoptache()">+</button>
     <progress id="progressBar"></progress>
     
-    <br />
     <div id="pourcentage">% de tâches accomplies</div>
 
     <div class="poptache" id="poptache">
@@ -46,24 +43,18 @@
         </div>
         <div class="poptache-body">
             <input type="text" id= "titre" placeholder="Titre ">
-            <p></p>
             <textarea id= "description" placeholder="Description"></textarea>
-            <p></p>
             <input type="date" id="echeance" name="echeance" value="" required/>
-            <p></p>
             <select name="priorite" id="priorite">
                 <option value="(3) Basse">Priorité basse</option>
                 <option value="(2) Moyenne">Priorité moyenne</option>
                 <option value="(1) Haute">Priorité haute</option>
             </select> 
-            <p></p>
             <select name="statut" id="statut">
                 <option value="En cours">En cours</option>
                 <option value="Terminée">Terminée</option>
             </select>
-            <p></p>
             <button id= "tachevalide" onclick="ajouterTache(-1)">Valider</button>
-            <p></p>
             <button id= "tachesuppr" onclick="supprimerTache(-1)">Supprimer la tâche</button>
         </div>
     </div>

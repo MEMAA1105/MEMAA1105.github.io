@@ -5,7 +5,7 @@ const table = document.querySelector('table');
 
 let triDirection = false;
 
-// récupère les headers de la table et leur applique un évènement lors du click, ainsi qu'envoie le numéro de la colomne à la fonction permettant le tri
+// récupère les headers de la table et leur applique un évènement lors du click, ainsi qu'envoie le numéro de la colonne à la fonction permettant le tri
 table.querySelectorAll('th').forEach((header, columnNo)=>{
     header.addEventListener('click', event => {
       triTable(columnNo);
@@ -16,7 +16,7 @@ table.querySelectorAll('th').forEach((header, columnNo)=>{
 document.querySelector('table').addEventListener('click', (position) => {
   const ligne = position.target.parentElement.rowIndex
   if(ligne > 0){
-    var tableBody = document.getElementById("tableTaches");
+    let tableBody = document.getElementById("tableTaches");
     let ligneData = ligne2data(tableBody.rows[ligne-1]);
     document.getElementById('titre').value=ligneData[0];
     document.getElementById('description').value=ligneData[1];
@@ -31,7 +31,7 @@ document.querySelector('table').addEventListener('click', (position) => {
   }
 })
 
-function triTable(colomne){
+function triTable(colonne){
     triDirection = !triDirection; // utilisé pour inverser la direction du tri (croissant/décroissant)
     // récupère le contenu de la table HTML pour l'extraire et le convertir en tableau JS afin de pouvoir le manipuler
     let tableBody = document.getElementById("tableTaches");
@@ -39,7 +39,7 @@ function triTable(colomne){
   
     // trie les données extraites, inversant le tri suivant la valeur de triDirection
     tableData.sort((a, b) => {
-      return triDirection ? (a[colomne] > b[colomne]) - (a[colomne] < b[colomne]) : (b[colomne] > a[colomne]) - (b[colomne] < a[colomne])
+      return triDirection ? (a[colonne] > b[colonne]) - (a[colonne] < b[colonne]) : (b[colonne] > a[colonne]) - (b[colonne] < a[colonne])
     });
     
     

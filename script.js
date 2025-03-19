@@ -3,9 +3,9 @@
 // restaure la session précédente
 
 window.onload = (event) => {
-  const tableutil = JSON.parse(localStorage.getItem('tableutil')); // récupère la table stockée si présente
+  const tableutil = JSON.parse(localStorage.getItem('tableutil')) ?? []; // récupère la table stockée si présente
 
-  // récupère la table HTML vide pour y insérer les lignes et colomnes permettant de restituer la table stockée
+  // récupère la table HTML vide pour y insérer les lignes et colonnes permettant de restituer la table stockée
   const temptable = document.getElementById("tableTaches");
   remplirTableVide(tableutil, temptable)
 
@@ -63,10 +63,4 @@ function supprimerTable(tableHTML){
   tableHTML.querySelectorAll('tr').forEach((ligne) => {
     tableHTML.deleteRow(ligne);
   })
-}
-
-function dosomth(){
-  var random = table2data(document.getElementById("tableTaches"));
-  random.splice(1,1);
-  searchTable();
 }

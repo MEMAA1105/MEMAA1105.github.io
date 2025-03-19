@@ -10,7 +10,7 @@ searchbar.addEventListener("input", (event) => {
 // la table initiale est sauvegardée pour être restaurée après une recherche et avant la suivante.
 
 var alreadysearched = false;
-var tableJS;
+var tableJS = [];
 
 function searchTable() {
     var tableHTML = document.getElementById("tableTaches");
@@ -30,7 +30,7 @@ function searchTable() {
     
         // parcours les lignes de la tableHTML transformée en tableJS, et construit une nouvelle table contenant les lignes dont le titre commence par la recherche.
         table2data(document.getElementById("tableTaches")).forEach((ligne) => {
-        if(ligne[0].startsWith(search)){
+        if(ligne[0].toUpperCase().startsWith(search.toUpperCase())){
             tableSearched.push(ligne);
         }
         })

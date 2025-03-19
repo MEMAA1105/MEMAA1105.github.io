@@ -16,7 +16,7 @@ function majBarre() {
   })
     valBarre = tacheFini/tableTaches.length*100;
     progressBar.value = valBarre;
-    document.getElementById('pourcentage').innerHTML = valBarre.toFixed(2) + "% de tâches terminées <br /> (" + tacheFini + "/" + tableTaches.length +")";
+    document.getElementById('pourcentage').innerHTML = valBarre.toFixed(2) + "% de tâches terminées (" + tacheFini + "/" + tableTaches.length +")";
   }
   else{
     document.getElementById('pourcentage').innerHTML = "% de tâches terminées";
@@ -31,7 +31,7 @@ function checkEcheance() {
   table2data(document.getElementById("tableTaches")).forEach((ligne) => {
     let checkDate = new Date(ligne[2]).getTime()/86400000;
     if(checkDate >= aujourdhui && checkDate - aujourdhui < nbjours && ligne[4] == "En cours"){
-      document.getElementById("popecheance-body").innerHTML += "- " + ligne[0] + " | échéance le: " + ligne[2] + " <br />"
+      document.getElementById("popecheance-body").innerHTML += ligne[2] + "<ul><li>" + ligne[0] + ""
       popecheance.classList.add('actif');
     }
   })
